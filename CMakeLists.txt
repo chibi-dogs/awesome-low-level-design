@@ -1,6 +1,5 @@
-cmake_minimum_required(VERSION 3.16...3.23)
+cmake_minimum_required(VERSION 4.0)
 
-set(CMAKE_CXX_STANDARD 26)
 # Set the project name and language
 project(
         lld_design
@@ -12,12 +11,10 @@ project(
 # strongly encouraged to enable this globally to avoid conflicts between
 # -Wpedantic being enabled and -std=c++20 and -std=gnu++20 for example
 # when compiling with PCH enabled
-
+set(CMAKE_CXX_STANDARD 26)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
 
-# 🔑 THIS IS THE IMPORTANT LINE
-set(CMAKE_OSX_DEPLOYMENT_TARGET 13.0)
 
 # Note: by default ENABLE_DEVELOPER_MODE is True
 # This means that all analysis (sanitizers, static analysis)
